@@ -1,9 +1,21 @@
 const numbers = [1, -1, 2, 3];
 
-const allPositive = numbers.every((value) => value >= 0);
-console.log(allPositive);
-const somePositive = numbers.some((value) => value >= 0);
-console.log(somePositive);
+const restaurants = [
+  { id: 1, isOpen: true },
+  { id: 2, isOpen: false },
+];
+
+// const filtered = numbers.filter((n) => n >= 0);
+// console.log(filtered);
+const openRestaurants = restaurants.filter(
+  (restaurant) => restaurant.isOpen === false
+);
+console.log(openRestaurants);
+
+// const allPositive = numbers.every((value) => value >= 0);
+// console.log(allPositive);
+// const somePositive = numbers.some((value) => value >= 0);
+// console.log(somePositive);
 
 // numbers.forEach((number, index) => console.log(index, number));
 
