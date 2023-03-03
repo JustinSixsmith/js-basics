@@ -1,27 +1,46 @@
-// Factory Function
-function createCircle(radius) {
-  return {
-    radius,
-    draw() {
-      console.log("draw");
-    },
-  };
+const circle = {
+  radius: 1,
+  draw() {
+    console.log("draw");
+  },
+};
+
+// for (const key in circle) {
+//   console.log(key, circle[key]);
+// }
+
+// for (const key of Object.keys(circle)) {
+//   console.log(key);
+// }
+
+for (const key of Object.entries(circle)) {
+  console.log(key);
 }
 
-const myCircle = createCircle(1);
-console.log(myCircle);
-console.log(myCircle.draw());
+// Factory Function
+// function createCircle(radius) {
+//   return {
+//     radius,
+//     draw() {
+//       console.log("draw");
+//     },
+//   };
+// }
+
+// const myCircle = createCircle(1);
+// console.log(myCircle);
+// console.log(myCircle.draw);
 
 // Constructor Function
-function Circle(radius) {
-  this.radius = radius;
-  this.draw = function () {
-    console.log("draw");
-  };
-}
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+// }
 
-const circle = new Circle(1);
-console.log(circle);
+// const circle = new Circle(1);
+// console.log(circle);
 
 // let a = "red";
 // let b = "blue";
