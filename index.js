@@ -1,13 +1,27 @@
-const circle = {
-  radius: 1,
-  draw() {
-    console.log("draw");
-  },
+const address = {
+  street: "2730 Stone Edge St",
+  city: "San Antonio",
+  zipCode: 78232,
 };
 
-const another = { ...circle };
+function showAddress(address) {
+  for (let key in address) {
+    console.log(key, address[key]);
+  }
+}
 
-console.log(another);
+showAddress(address);
+
+// const circle = {
+//   radius: 1,
+//   draw() {
+//     console.log("draw");
+//   },
+// };
+
+// const another = { ...circle };
+
+// console.log(another);
 
 // const another = Object.assign(
 //   {
@@ -28,8 +42,8 @@ console.log(another);
 //   console.log(key);
 // }
 
-// for (let key of Object.entries(circle)) {
-//   console.log(key);
+// for (let entry of Object.entries(circle)) {
+//   console.log(entry);
 // }
 
 // if ("radius" in circle) console.log("yes");
