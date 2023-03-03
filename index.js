@@ -1,24 +1,44 @@
-let address1 = new Address("a", "b", "c");
-let address2 = new Address("a", "b", "c");
+let post = {
+  title: "a",
+  body: "b",
+  author: "c",
+  views: 10,
+  comments: [
+    {
+      author: "a",
+      body: "b",
+    },
+    {
+      author: "c",
+      body: "d",
+    },
+  ],
+  isLive: true,
+};
 
-function Address(street, city, zipCode) {
-  (this.street = street), (this.city = city), (this.zipCode = zipCode);
-}
+console.log(post);
 
-function isEqual(address1, address2) {
-  return (
-    address1.street === address2.street &&
-    address1.city === address2.city &&
-    address1.zipCode === address2.zipCode
-  );
-}
+// let address1 = new Address("a", "b", "c");
+// let address2 = new Address("a", "b", "c");
 
-function isSame(address1, address2) {
-  return address1 === address2;
-}
+// function Address(street, city, zipCode) {
+//   (this.street = street), (this.city = city), (this.zipCode = zipCode);
+// }
 
-console.log(isEqual(address1, address2));
-console.log(isSame(address1, address2));
+// function isEqual(address1, address2) {
+//   return (
+//     address1.street === address2.street &&
+//     address1.city === address2.city &&
+//     address1.zipCode === address2.zipCode
+//   );
+// }
+
+// function isSame(address1, address2) {
+//   return address1 === address2;
+// }
+
+// console.log(isEqual(address1, address2));
+// console.log(isSame(address1, address2));
 
 // const address = {
 //   street: "2730 Stone Edge St",
