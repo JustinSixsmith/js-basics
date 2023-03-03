@@ -1,22 +1,33 @@
-let post = {
-  title: "a",
-  body: "b",
-  author: "c",
-  views: 10,
-  comments: [
-    {
-      author: "a",
-      body: "b",
-    },
-    {
-      author: "c",
-      body: "d",
-    },
-  ],
-  isLive: true,
-};
+function Post(title, body, author) {
+  (this.title = title),
+    (this.body = body),
+    (this.author = author),
+    (this.views = 0),
+    (this.comments = []),
+    (isLive = false);
+}
 
-console.log(post);
+console.log(new Post("a", "b", "c"));
+
+// let post = {
+//   title: "a",
+//   body: "b",
+//   author: "c",
+//   views: 10,
+//   comments: [
+//     {
+//       author: "a",
+//       body: "b",
+//     },
+//     {
+//       author: "c",
+//       body: "d",
+//     },
+//   ],
+//   isLive: true,
+// };
+
+// console.log(post);
 
 // let address1 = new Address("a", "b", "c");
 // let address2 = new Address("a", "b", "c");
