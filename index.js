@@ -1,6 +1,11 @@
-const numbers = [1, 2, 3];
+const numbers = [1, -1, 2, 3];
 
-numbers.forEach((number, index) => console.log(index, number));
+const allPositive = numbers.every((value) => value >= 0);
+console.log(allPositive);
+const somePositive = numbers.some((value) => value >= 0);
+console.log(somePositive);
+
+// numbers.forEach((number, index) => console.log(index, number));
 
 // const courses = [
 //   { id: 2, name: "Node.js" },
