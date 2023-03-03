@@ -5,17 +5,34 @@ const circle = {
   },
 };
 
-// for (const key in circle) {
+const another = { ...circle };
+
+console.log(another);
+
+// const another = Object.assign(
+//   {
+//     color: "yellow",
+//   },
+//   circle
+// );
+
+// const another = {};
+// for (let key in circle)
+//   another[key] = circle[key];
+
+// for (let key in circle) {
 //   console.log(key, circle[key]);
 // }
 
-// for (const key of Object.keys(circle)) {
+// for (let key of Object.keys(circle)) {
 //   console.log(key);
 // }
 
-for (const key of Object.entries(circle)) {
-  console.log(key);
-}
+// for (let key of Object.entries(circle)) {
+//   console.log(key);
+// }
+
+// if ("radius" in circle) console.log("yes");
 
 // Factory Function
 // function createCircle(radius) {
