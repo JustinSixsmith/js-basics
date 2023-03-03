@@ -1,36 +1,48 @@
-let h = 30;
+const numbers = [1, 2, 3];
 
-pyramid(h);
+numbers.forEach((number, index) => console.log(index, number));
 
-function pyramid(rows) {
-  console.log(
-    ` *
-     **
-    ***
-     **
-        *`
-  );
+// const courses = [
+//   { id: 2, name: "Node.js" },
+//   { id: 1, name: "javaScript" },
+// ];
 
-  for (let row = 1; row <= rows; row++) {
-    let space = makeRoom(rows - row);
-    let layer = makeRow(row);
-    console.log(space + layer);
-  }
-}
+// courses.sort(function (a, b) {
+//   // return a.id - b.id;
 
-function makeRow(row) {
-  let pattern = "";
-  for (let i = 0; i < row; i++) pattern += "*";
-  return pattern + "^" + pattern;
-}
+//   const nameA = a.name.toLocaleUpperCase;
+//   const nameB = b.name.toLocaleUpperCase;
+//   if (nameA < nameB) return -1;
+//   if (nameB < nameA) return 1;
+// });
 
-function makeRoom(space) {
-  let room = "";
-  for (let i = space; i > 0; i--) {
-    room += " ";
-  }
-  return room;
-}
+// console.log(courses);
+
+// let h = 30;
+
+// pyramid(h);
+
+// function pyramid(rows) {
+//   for (let row = 1; row <= rows; row++) {
+//     let space = makeRoom(rows - row);
+//     let layer = makeRow(row);
+//     console.log(space + layer);
+//   }
+// }
+
+// function makeRow(row) {
+//   let pattern = "";
+//   for (let i = 0; i < row; i++) pattern += "*";
+//   return pattern + "^" + pattern;
+// }
+
+// function makeRoom(space) {
+//   let room = "";
+//   for (let i = space; i > 0; i--) {
+//     room += " ";
+//   }
+//   return room;
+// }
 
 // const courses = [
 //   { id: 1, name: "a" },
