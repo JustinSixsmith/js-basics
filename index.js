@@ -1,25 +1,36 @@
-let priceRanges = [
-  {
-    label: "$",
-    tooltip: "Inexpensive",
-    minPerPerson: 0,
-    maxPerPerson: 10,
-  },
-  {
-    label: "$$",
-    tooltip: "Moderate",
-    minPerPerson: 11,
-    maxPerPerson: 20,
-  },
-  {
-    label: "$$$",
-    tooltip: "Expensive",
-    minPerPerson: 21,
-    maxPerPerson: 50,
-  },
+const courses = [
+  { id: 1, name: "a" },
+  { id: 2, name: "b" },
 ];
 
-let restaurants = [{ averagePerPerson: 5 }];
+const course = courses.findIndex(function (course) {
+  return course.name === "a";
+});
+
+console.log(course);
+
+// let priceRanges = [
+//   {
+//     label: "$",
+//     tooltip: "Inexpensive",
+//     minPerPerson: 0,
+//     maxPerPerson: 10,
+//   },
+//   {
+//     label: "$$",
+//     tooltip: "Moderate",
+//     minPerPerson: 11,
+//     maxPerPerson: 20,
+//   },
+//   {
+//     label: "$$$",
+//     tooltip: "Expensive",
+//     minPerPerson: 21,
+//     maxPerPerson: 50,
+//   },
+// ];
+
+// let restaurants = [{ averagePerPerson: 5 }];
 
 // function Post(title, body, author) {
 //   (this.title = title),
