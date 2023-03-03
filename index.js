@@ -1,11 +1,45 @@
-const courses = [
-  { id: 1, name: "a" },
-  { id: 2, name: "b" },
-];
+let h = 30;
 
-const course = courses.find((course) => course.name === "a");
+pyramid(h);
 
-console.log(course);
+function pyramid(rows) {
+  console.log(
+    ` *
+     **
+    ***
+     **
+        *`
+  );
+
+  for (let row = 1; row <= rows; row++) {
+    let space = makeRoom(rows - row);
+    let layer = makeRow(row);
+    console.log(space + layer);
+  }
+}
+
+function makeRow(row) {
+  let pattern = "";
+  for (let i = 0; i < row; i++) pattern += "*";
+  return pattern + "^" + pattern;
+}
+
+function makeRoom(space) {
+  let room = "";
+  for (let i = space; i > 0; i--) {
+    room += " ";
+  }
+  return room;
+}
+
+// const courses = [
+//   { id: 1, name: "a" },
+//   { id: 2, name: "b" },
+// ];
+
+// const course = courses.find((course) => course.name === "a");
+
+// console.log(course);
 
 // let priceRanges = [
 //   {
