@@ -3,9 +3,7 @@ const courses = [
   { id: 2, name: "b" },
 ];
 
-const course = courses.findIndex(function (course) {
-  return course.name === "a";
-});
+const course = courses.find((course) => course.name === "a");
 
 console.log(course);
 
