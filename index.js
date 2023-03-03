@@ -1,16 +1,25 @@
 const numbers = [1, -1, 2, 3];
 
-const restaurants = [
-  { id: 1, isOpen: true },
-  { id: 2, isOpen: false },
-];
+const items = numbers
+  .filter((n) => n >= 0)
+  .map((n) => ({ value: n }))
+  .filter((obj) => obj.value > 1)
+  .map((obj) => obj.value);
+console.log(items);
 
-// const filtered = numbers.filter((n) => n >= 0);
+// const items = filtered.map((n) => "<li>" + n + "</li>");
+
+// const html = "<ul>" + items.join("") + "</ul>";
+// console.log(html);
+
+// const restaurants = [
+//   { id: 1, isOpen: true },
+//   { id: 2, isOpen: false },
+// ];
+
 // console.log(filtered);
-const openRestaurants = restaurants.filter(
-  (restaurant) => restaurant.isOpen === false
-);
-console.log(openRestaurants);
+// const openRestaurants = restaurants.filter((restaurant) => restaurant.isOpen);
+// console.log(openRestaurants);
 
 // const allPositive = numbers.every((value) => value >= 0);
 // console.log(allPositive);
