@@ -1,16 +1,38 @@
-const address = {
-  street: "2730 Stone Edge St",
-  city: "San Antonio",
-  zipCode: 78232,
-};
+let address1 = new Address("a", "b", "c");
+let address2 = new Address("a", "b", "c");
 
-function showAddress(address) {
-  for (let key in address) {
-    console.log(key, address[key]);
-  }
+function Address(street, city, zipCode) {
+  (this.street = street), (this.city = city), (this.zipCode = zipCode);
 }
 
-showAddress(address);
+function isEqual(address1, address2) {
+  return (
+    address1.street === address2.street &&
+    address1.city === address2.city &&
+    address1.zipCode === address2.zipCode
+  );
+}
+
+function isSame(address1, address2) {
+  return address1 === address2;
+}
+
+console.log(isEqual(address1, address2));
+console.log(isSame(address1, address2));
+
+// const address = {
+//   street: "2730 Stone Edge St",
+//   city: "San Antonio",
+//   zipCode: 78232,
+// };
+
+// function showAddress(address) {
+//   for (let key in address) {
+//     console.log(key, address[key]);
+//   }
+// }
+
+// showAddress(address);
 
 // const circle = {
 //   radius: 1,
