@@ -1,3 +1,28 @@
+// Factory Function
+function createCircle(radius) {
+  return {
+    radius,
+    draw() {
+      console.log("draw");
+    },
+  };
+}
+
+const myCircle = createCircle(1);
+console.log(myCircle);
+console.log(myCircle.draw());
+
+// Constructor Function
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+}
+
+const circle = new Circle(1);
+console.log(circle);
+
 // let a = "red";
 // let b = "blue";
 
@@ -62,16 +87,16 @@
 //   }
 // }
 
-showPrimes(49);
+// showPrimes(49);
 
-function showPrimes(limit) {
-  for (let number = 2; number <= limit; number++)
-    if (isPrime(number)) console.log(number);
-}
+// function showPrimes(limit) {
+//   for (let number = 2; number <= limit; number++)
+//     if (isPrime(number)) console.log(number);
+// }
 
-function showPrimes(number) {
-  for (let factor = 2; factor < number; factor++)
-    if (number % factor === 0) return false;
+// function showPrimes(number) {
+//   for (let factor = 2; factor < number; factor++)
+//     if (number % factor === 0) return false;
 
-  return true;
-}
+//   return true;
+// }
