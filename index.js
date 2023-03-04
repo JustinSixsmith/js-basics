@@ -1,13 +1,22 @@
-const numbers = [1, -1, 2, 3];
+const numbers = arrayFromRange(-4, 10);
+console.log(numbers);
+
+function arrayFromRange(min, max) {
+  let array = [];
+  for (let i = min; i <= max; i++) array.push(i);
+  return array;
+}
+
+// const numbers = [1, -1, 2, 3];
 
 // let sum = 0;
 // for (let n of numbers) sum += n;
 
-let sum = numbers.reduce(
-  (accumulator, currentValue) => accumulator + currentValue
-);
+// let sum = numbers.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue
+// );
 
-console.log(sum);
+// console.log(sum);
 
 // const items = numbers
 //   .filter((n) => n >= 0)
