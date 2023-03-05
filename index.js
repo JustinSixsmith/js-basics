@@ -1,11 +1,47 @@
-const numbers = arrayFromRange(-4, 10);
-console.log(numbers);
+const numbers = [1, 2, 3, 4];
 
-function arrayFromRange(min, max) {
-  let array = [];
-  for (let i = min; i <= max; i++) array.push(i);
-  return array;
+const output = move(numbers, 5, 6);
+
+console.log(output);
+
+function move(array, index, offset) {
+  let newIndex = index + offset;
+  if (newIndex >= array.length || newIndex < 0)
+    console.error("Infalid offset.");
+  return;
+
+  const output = [...array];
+  let element = output.splice(index, 1)[0];
+  output.splice(newIndex, 0, element);
+  return output;
 }
+
+// const output = except(numbers, [1]);
+// console.log(output);
+
+// function except(array, excluded) {
+//   const output = [];
+//   for (let element of array)
+//     if (!excluded.includes(element)) output.push(element);
+//   return output;
+// }
+
+// function findNumber(array, searchElement) {
+//   for (let element of array) if (element === searchElement) return true;
+//   return false;
+// }
+
+// console.log(numbers.includes(1));
+// console.log(findNumber(numbers, 44));
+
+// const numbers = arrayFromRange(-4, 10);
+// console.log(numbers);
+
+// function arrayFromRange(min, max) {
+//   let array = [];
+//   for (let i = min; i <= max; i++) array.push(i);
+//   return array;
+// }
 
 // const numbers = [1, -1, 2, 3];
 
