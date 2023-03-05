@@ -1,20 +1,31 @@
-const numbers = [1, 2, 3, 4];
+const numbers = [1, 2, 3, 4, 1];
 
-const output = move(numbers, 5, 6);
+const count = countOccurences(numbers, 1);
 
-console.log(output);
+console.log(count);
 
-function move(array, index, offset) {
-  let newIndex = index + offset;
-  if (newIndex >= array.length || newIndex < 0)
-    console.error("Infalid offset.");
-  return;
-
-  const output = [...array];
-  let element = output.splice(index, 1)[0];
-  output.splice(newIndex, 0, element);
-  return output;
+function countOccurences(array, searchElement) {
+  return array.reduce((accumulator, current) => {
+    const occurrence = current === searchElement ? 1 : 0;
+    return accumulator + occurrence;
+  }, 0);
 }
+
+// const output = move(numbers, 5, 6);
+
+// console.log(output);
+
+// function move(array, index, offset) {
+//   let newIndex = index + offset;
+//   if (newIndex >= array.length || newIndex < 0)
+//     console.error("Infalid offset.");
+//   return;
+
+//   const output = [...array];
+//   let element = output.splice(index, 1)[0];
+//   output.splice(newIndex, 0, element);
+//   return output;
+// }
 
 // const output = except(numbers, [1]);
 // console.log(output);
