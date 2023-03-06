@@ -1,12 +1,32 @@
-const video = {
-    title: 'a',
-    tags: ['a', 'b', 'c'],
-    showTags() {
-        this.tags.forEach(tag => console.log(this.title, tag));
+const circle = {
+    radius: 2,
+    area: 20
+    get area() {
+        return this.area;
     }
-};
+}
 
-video.showTags();
+console.log(circle.area());
+
+// function sum(...numbers) {
+//     if (numbers.length === 1 && Array.isArray(numbers[0])) {
+//         numbers = [...numbers[0]];
+//     }
+//     return numbers.reduce((a, b) => a + b);
+// }
+//
+// console.log(sum([1, 2, 3, 4]));
+
+
+// const video = {
+//     title: 'a',
+//     tags: ['a', 'b', 'c'],
+//     showTags() {
+//         this.tags.forEach(tag => console.log(this.title, tag));
+//     }
+// };
+//
+// video.showTags();
 
 // const person = {
 //     firstName: "Justin",
