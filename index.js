@@ -1,8 +1,26 @@
-function interest(principal, rate = 3.5, years = 5) {
-    return principal * rate / 100 * years;
-}
+const person = {
+    firstName: "Justin",
+    lastName: "Sixsmith",
+    get fullName() {
+        return `${person.firstName} ${person.lastName}`;
+    },
+    set fullName(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
 
-console.log(interest(10000));
+person.fullName = 'Justin Sixsmith'
+
+console.log(person);
+
+
+// function interest(principal, rate = 3.5, years = 5) {
+//     return principal * rate / 100 * years;
+// }
+//
+// console.log(interest(10000));
 
 // function sum(discount, ...prices) {
 //     const total = prices.reduce((a, b) => a + b);
