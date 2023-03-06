@@ -6,9 +6,7 @@ console.log(max);
 
 function getMax(array) {
     if (array.length === 0) return undefined;
-    return array.reduce((a, b) => {
-        return b > a ? b : a;
-    })
+    return array.reduce((a, b) => a > b ? a : b);
 }
 
 // function getMax(array) {
