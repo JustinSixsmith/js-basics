@@ -1,10 +1,15 @@
-function sum(discount, ...prices) {
-    const total = prices.reduce((a, b) => a + b);
-    return total * (1 - discount);
+function interest(principal, rate = 3.5, years = 5) {
+    return principal * rate / 100 * years;
 }
 
-console.log(sum(0.1, 20, 30));
+console.log(interest(10000));
 
+// function sum(discount, ...prices) {
+//     const total = prices.reduce((a, b) => a + b);
+//     return total * (1 - discount);
+// }
+//
+// console.log(sum(0.1, 20, 30));
 
 // const movies = [
 //     {title: 'a', year: 2018, rating: 4.5},
