@@ -1,27 +1,37 @@
-const person = {
-    firstName: "Justin",
-    lastName: "Sixsmith",
-    get fullName() {
-        return `${person.firstName} ${person.lastName}`;
-    },
-    set fullName(value) {
-        if (typeof value !== 'string')
-            throw new Error('Value is not a string.');
-        const parts = value.split(' ');
-        if (parts.length !== 2)
-            throw new Error('Enter a first and last name.');
-        this.firstName = parts[0];
-        this.lastName = parts[1];
+const video = {
+    title: 'a',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach(tag => console.log(this.title, tag));
     }
 };
 
-try {
-    person.fullName = '';
-} catch (e) {
-    alert(e);
-}
+video.showTags();
 
-console.log(person);
+// const person = {
+//     firstName: "Justin",
+//     lastName: "Sixsmith",
+//     get fullName() {
+//         return `${person.firstName} ${person.lastName}`;
+//     },
+//     set fullName(value) {
+//         if (typeof value !== 'string')
+//             throw new Error('Value is not a string.');
+//         const parts = value.split(' ');
+//         if (parts.length !== 2)
+//             throw new Error('Enter a first and last name.');
+//         this.firstName = parts[0];
+//         this.lastName = parts[1];
+//     }
+// };
+//
+// try {
+//     person.fullName = '';
+// } catch (e) {
+//     alert(e);
+// }
+//
+// console.log(person);
 
 
 // function interest(principal, rate = 3.5, years = 5) {
