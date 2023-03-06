@@ -1,12 +1,11 @@
 const circle = {
-    radius: 2,
-    area: 20
-    get area() {
-        return this.area;
-    }
-}
+  radius: 2,
+  get area() {
+    return Math.PI * this.radius * this.radius;
+  },
+};
 
-console.log(circle.area());
+console.log(circle.area);
 
 // function sum(...numbers) {
 //     if (numbers.length === 1 && Array.isArray(numbers[0])) {
@@ -16,7 +15,6 @@ console.log(circle.area());
 // }
 //
 // console.log(sum([1, 2, 3, 4]));
-
 
 // const video = {
 //     title: 'a',
@@ -52,7 +50,6 @@ console.log(circle.area());
 // }
 //
 // console.log(person);
-
 
 // function interest(principal, rate = 3.5, years = 5) {
 //     return principal * rate / 100 * years;
@@ -121,7 +118,6 @@ console.log(circle.area());
 //     return accumulator + occurrence;
 //   }, 0);
 // }
-
 
 // const output = move(numbers, 5, 6);
 
