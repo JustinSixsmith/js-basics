@@ -1,15 +1,43 @@
-const numbers = [1, 2, 3, 4, 1];
+const numbers = [1, 1, 3, 1];
 
-const count = countOccurences(numbers, 1);
+const max = getMax(numbers);
 
-console.log(count);
+console.log(max);
 
-function countOccurences(array, searchElement) {
-  return array.reduce((accumulator, current) => {
-    const occurrence = current === searchElement ? 1 : 0;
-    return accumulator + occurrence;
-  }, 0);
+function getMax(array) {
+    if (array.length === 0) return undefined;
+    return array.reduce((a, b) => {
+        return b > a ? b : a;
+    })
 }
+
+// function getMax(array) {
+//     let max = array[0];
+//     for (let i = 1; i < array.length; i++) {
+//         if (array[i] > max)
+//             max = array[i];
+//     }
+//     return max;
+// }
+
+// const count = countOccurrences(numbers, 1);
+//
+// console.log(count);
+//
+// function countOccurrences(array, searchElement) {
+//  return array.reduce((accumulator, current) => {
+//    const occurrence = current === searchElement ? 1 : 0;
+//    return accumulator + occurrence;
+//  }, 0);
+// }
+
+// function countOccurrences(array, searchElement) {
+//   return array.reduce((accumulator, current) => {
+//     const occurrence = current === searchElement ? 1 : 0;
+//     return accumulator + occurrence;
+//   }, 0);
+// }
+
 
 // const output = move(numbers, 5, 6);
 
@@ -18,7 +46,7 @@ function countOccurences(array, searchElement) {
 // function move(array, index, offset) {
 //   let newIndex = index + offset;
 //   if (newIndex >= array.length || newIndex < 0)
-//     console.error("Infalid offset.");
+//     console.error("Invalid offset.");
 //   return;
 
 //   const output = [...array];
@@ -270,7 +298,7 @@ function countOccurences(array, searchElement) {
 
 // if ("radius" in circle) console.log("yes");
 
-// Factory Function
+// Factory Function:
 // function createCircle(radius) {
 //   return {
 //     radius,
@@ -284,7 +312,7 @@ function countOccurences(array, searchElement) {
 // console.log(myCircle);
 // console.log(myCircle.draw);
 
-// Constructor Function
+// Constructor Function:
 // function Circle(radius) {
 //   this.radius = radius;
 //   this.draw = function () {
