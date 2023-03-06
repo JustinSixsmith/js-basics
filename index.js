@@ -1,19 +1,27 @@
-const movies = [
-    {title: 'a', year: 2018, rating: 4.5},
-    {title: 'b', year: 2018, rating: 4.7},
-    {title: 'c', year: 2018, rating: 3},
-    {title: 'd', year: 2017, rating: 4.5},
-];
+function sum(discount, ...prices) {
+    const total = prices.reduce((a, b) => a + b);
+    return total * (1 - discount);
+}
+
+console.log(sum(0.1, 20, 30));
+
+
+// const movies = [
+//     {title: 'a', year: 2018, rating: 4.5},
+//     {title: 'b', year: 2018, rating: 4.7},
+//     {title: 'c', year: 2018, rating: 3},
+//     {title: 'd', year: 2017, rating: 4.5},
+// ];
 
 // Find all the movies in 2018 with rating >= 4
-// Sort them by their rating in descending order
+// Sort them by their rating in descending¬ order
 // Pick their title
-const titles = movies.filter(m => m.year === 2018 && m.rating >= 4)
-    .sort((a, b) => a.rating - b.rating)
-    .reverse()
-    .map(m => m.title);
-
-console.log(titles);
+// const titles = movies.filter(m => m.year === 2018 && m.rating >= 4)
+//     .sort((a, b) => a.rating - b.rating)
+//     .reverse()
+//     .map(m => m.title);
+//
+// console.log(titles);
 
 // const numbers = [1, 1, 3, 1];
 //
