@@ -1,11 +1,28 @@
-const circle = {
-  radius: 2,
-  get area() {
-    return Math.PI * this.radius * this.radius;
-  },
-};
+const numbers = [1, 2, 3, 1, 4, 1];
 
-console.log(circle.area);
+try {
+  const count = countOccurrences(null, 1);
+  console.log(count);
+} catch (e) {
+  console.log(e.message);
+}
+
+function countOccurrences(array, searchElement) {
+  if (!Array.isArray(array)) throw new Error("Invalid array");
+  return array.reduce((accumulator, current) => {
+    const occurrence = current === searchElement ? 1 : 0;
+    return accumulator + occurrence;
+  }, 0);
+}
+
+// const circle = {
+//   radius: 2,
+//   get area() {
+//     return Math.PI * this.radius * this.radius;
+//   },
+// };
+
+// console.log(circle.area);
 
 // function sum(...numbers) {
 //     if (numbers.length === 1 && Array.isArray(numbers[0])) {
@@ -99,17 +116,6 @@ console.log(circle.area);
 //             max = array[i];
 //     }
 //     return max;
-// }
-
-// const count = countOccurrences(numbers, 1);
-//
-// console.log(count);
-//
-// function countOccurrences(array, searchElement) {
-//  return array.reduce((accumulator, current) => {
-//    const occurrence = current === searchElement ? 1 : 0;
-//    return accumulator + occurrence;
-//  }, 0);
 // }
 
 // function countOccurrences(array, searchElement) {
