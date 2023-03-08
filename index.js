@@ -1,22 +1,40 @@
+function Shape() {}
+
+Shape.prototype.duplicate = function () {
+  console.log('duplicate');
+};
+
 function Circle(radius) {
   this.radius = radius;
-
-  this.move = function () {
-    this.draw();
-    console.log('move');
-  };
 }
+
+Circle.prototype = Object.create(Shape.prototype);
 
 Circle.prototype.draw = function () {
   console.log('draw');
 };
 
-const c1 = new Circle(1);
-const c2 = new Circle(1);
+const s = new Shape();
+const c = new Circle(1);
 
-Circle.prototype.toString = function () {
-  return 'Circle with radius ' + this.radius;
-};
+// function Circle(radius) {
+//   this.radius = radius;
+
+//   this.move = function () {
+//     console.log('move');
+//   };
+// }
+
+// Circle.prototype.draw = function () {
+//   console.log('draw');
+// };
+
+// const c1 = new Circle(1);
+// const c2 = new Circle(1);
+
+// Circle.prototype.toString = function () {
+//   return 'Circle with radius ' + this.radius;
+// };
 
 // let person = { name: 'Justin' };
 
