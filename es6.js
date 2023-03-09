@@ -1,5 +1,28 @@
 'use strict';
 
+class Shape {
+  constructor(color) {
+    this.color = color;
+  }
+
+  move() {
+    console.log('move');
+  }
+}
+
+class Circle extends Shape {
+  constructor(color, radius) {
+    super(color);
+    this.radius = radius;
+  }
+
+  draw() {
+    console.log('draw');
+  }
+}
+
+const c = new Circle('red', 1);
+
 // function Circle(radius) {
 //   this.radius = radius;
 
@@ -37,25 +60,44 @@
 //   [_draw]() {}
 // }
 
-const _radius = new WeakMap();
-const _move = new WeakMap();
+// const _radius = new WeakMap();
+// const _move = new WeakMap();
 
-class Circle {
-  constructor(radius) {
-    _radius.set(this, radius);
+// class Circle {
+//   constructor(radius) {
+//     _radius.set(this, radius);
 
-    _move.set(this, () => {
-      console.log('move', this);
-    });
-  }
+//     _move.set(this, () => {
+//       console.log('move', this);
+//     });
+//   }
 
-  draw() {
-    // console.log(_radius.get(this));
-    _move.get(this)();
+//   draw() {
+//     // console.log(_radius.get(this));
+//     _move.get(this)();
 
-    console.log('draw');
-  }
-}
+//     console.log('draw');
+//   }
+// }
 
-const c = new Circle(1);
-c.draw();
+// const c = new Circle(1);
+// c.draw();
+
+// const _radius = new WeakMap();
+
+// class Circle {
+//   constructor(radius) {
+//     _radius.set(this, radius);
+//   }
+
+//   get radius() {
+//     return _radius.get(this);
+//   }
+
+//   set radius(value) {
+//     if (value <= 0) throw new Error('Invalid radius');
+//     _radius.set(this, value);
+//   }
+// }
+
+// const c = new Circle(1);
