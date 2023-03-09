@@ -27,12 +27,35 @@
 // // const c = new Circle(1);
 // const circle = Circle.parse('{ "radius": 1 }');
 
-const _radius = Symbol();
-const _draw = Symbol();
+// const _radius = Symbol();
+// const _draw = Symbol();
+// class Circle {
+//   constructor(radius) {
+//     this[_radius] = radius;
+//   }
+
+//   [_draw]() {}
+// }
+
+const _radius = new WeakMap();
+const _move = new WeakMap();
+
 class Circle {
   constructor(radius) {
-    this[_radius] = radius;
+    _radius.set(this, radius);
+
+    _move.set(this, () => {
+      console.log('move', this);
+    });
   }
 
-  [_draw]() {}
+  draw() {
+    // console.log(_radius.get(this));
+    _move.get(this)();
+
+    console.log('draw');
+  }
 }
+
+const c = new Circle(1);
+c.draw();
