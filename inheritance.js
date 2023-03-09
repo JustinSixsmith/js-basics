@@ -1,37 +1,71 @@
-function Shape(color) {
-  this.color = color;
-}
-
-Shape.prototype.duplicate = function () {
-  console.log('duplicate');
-};
-
 function extend(Child, Parent) {
   Child.prototype = Object.create(Parent.prototype);
   Child.prototype.constructor = Child;
 }
 
-function Circle(radius, color) {
-  Shape.call(this, color);
+function Shape() {}
 
-  this.radius = radius;
-}
+Shape.prototype.duplicate = function () {
+  console.log('duplicate');
+};
+
+function Circle() {}
 
 extend(Circle, Shape);
 
-Circle.prototype.draw = function () {
-  console.log('draw');
+Circle.prototype.duplicate = function () {
+  // Shape.prototype.duplicate.call(this);
+
+  console.log('duplicate circle');
 };
 
-function Square(size) {
-  Shape.call(this, color);
-  this.size = size;
-}
+function Square() {}
 
 extend(Square, Shape);
 
-const s = new Shape();
-const c = new Circle(1);
+Square.prototype.duplicate = function () {
+  console.log('duplicate square');
+};
+
+const shapes = [new Circle(), new Square()];
+
+for (let shape of shapes) shape.duplicate();
+
+// function Shape(color) {
+//   this.color = color;
+// }
+
+// Shape.prototype.duplicate = function () {
+//   console.log('duplicate');
+// };
+
+// function extend(Child, Parent) {
+//   Child.prototype = Object.create(Parent.prototype);
+//   Child.prototype.constructor = Child;
+// }
+
+// function Circle(radius, color) {
+//   Shape.call(this, color);
+
+//   this.radius = radius;
+// }
+
+// extend(Circle, Shape);
+
+// Circle.prototype.draw = function () {
+//   console.log('draw');
+// };
+
+// function Square(size) {
+//   Shape.call(this, color);
+//   this.size = size;
+// }
+
+// extend(Square, Shape);
+
+// const s = new Shape();
+// const c = new Circle(1, 'red');
+// const sq = new Square(10);
 
 // function Circle(radius) {
 //   this.radius = radius;
